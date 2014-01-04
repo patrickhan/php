@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<cu3er>
+	<settings>
+		<preloader>
+		</preloader>
+		<auto_play>
+			<defaults symbol='circular' time='8' />
+			<tweenIn x='900' y='430' width='35' height='35' tint='0xFFFFFF' />
+		</auto_play>
+		<description>
+			<defaults
+				round_corners='0, 0, 0, 0'
+				
+				heading_font='Century Gothic'
+				heading_text_size='22'
+				heading_text_color='0xFFFFFF'          
+				heading_text_margin='10, 0, 0,10'  
+				
+				paragraph_font='Century Gothic'
+				paragraph_text_size='13'
+				paragraph_text_color='0xcbcbcb'
+				paragraph_text_margin='10, 0, 0, 10'       
+			/>
+		</description>
+	</settings>    
+
+	<slides><slide>
+       		<url>image/data/banner/banner4.png</url>
+        </slide><transition num='6' slicing='vertical' direction='up'/>
+        <slide>
+       		<url>image/data/banner/banner3.png</url>
+		
+        </slide><transition num='4' direction='right'/>
+        <slide>
+       		<url>image/data/banner/banner2.png</url>
+		
+        </slide><transition num='3' slicing='vertical' direction='down'/>
+        <slide>
+       		<url>image/data/banner/banner1.png</url>
+		
+        </slide></slides>
+</cu3er>

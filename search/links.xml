@@ -1,0 +1,13 @@
+<?xml version='1.0'?>
+
+<products>
+<link>
+<title>Sample Product</title>
+<url>index.php?route=product/product&amp;product_id=19</url>
+</link>
+
+<link>
+<title>womanshow1</title>
+<url>womanshoe1</url>
+</link>
+</products>
