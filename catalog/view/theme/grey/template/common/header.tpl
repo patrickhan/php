@@ -1,220 +1,119 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>" xml:lang="<?php echo $lang; ?>">
-<head>
-<title><?php echo $title; ?></title>
-<?php if ($description) { ?>
-<meta name="description" content="<?php echo $description; ?>" />
-<?php } ?>
-<?php if ($keywords) { ?>
-<meta name="keywords" content="<?php echo $keywords; ?>" />
-<?php } ?>
-<meta name="robots" content="index, follow" />
-<base href="<?php echo $base; ?>" />
-<?php if ($icon) { ?>
-<link href="image/<?php echo $icon; ?>" rel="icon" />
-<?php } ?>
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/grey/stylesheet/stylesheet.css" />
-<!--[if lt IE 7]>
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/grey/stylesheet/ie6.css" />
-<script type="text/javascript" src="catalog/view/javascript/unitpngfix/unitpngfix.js"></script>
-<![endif]-->
-<?php foreach ($styles as $style) { ?>
-<link rel="stylesheet" type="text/css" href="view/stylesheet/<?php echo $style; ?>" />
-<?php } ?>
-<script type="text/javascript" src="catalog/view/javascript/jquery/jquery-1.3.2.min.js"></script>
-<script type="text/javascript" src="catalog/view/javascript/jquery/thickbox/thickbox-compressed.js"></script>
-<link rel="stylesheet" type="text/css" href="catalog/view/javascript/jquery/thickbox/thickbox.css" />
-<script type="text/javascript" src="catalog/view/javascript/stuHover.js"></script>
-<?php if ($slider) { ?>
-<script type="text/javascript" src="catalog/view/javascript/js/easySlider1.7.js"></script>
-<?php } ?>
-<?php if ($fade) { ?>
-<script type="text/javascript" src="catalog/view/javascript/js/slideshowfade.js"></script>
-<?php } ?>
-<script type="text/javascript" src="catalog/view/javascript/jquery/tab.js"></script>
-<script type="text/javascript" src="catalog/view/javascript/jqueryui/jquery-ui-1.7.2.custom.min.js"></script>
-<link rel="stylesheet" type="text/css" href="catalog/view/javascript/jqueryui/smoothness/jquery-ui-1.7.2.custom.css" />
-<?php foreach ($scripts as $script) { ?>
-<script type="text/javascript" src="view/javascript/jquery/<?php echo $script; ?>"></script>
-<?php } ?>
-
-<?php
-foreach ($scripts as $script) { ?>
-<script type="text/javascript" src="view/javascript/jquery/<?php echo $script; ?>"></script>
-<?php } ?>
-</head>
-<body>
-<div id="container">
-<div id="header">
-  <div id="div1">
-  <div id="logo">
-  <?php echo $logo_text; ?>
-  </div>
-    <div id="slider">
-			<?php echo $logo; ?>
-			<?if ($fade) { ?>
-				<script language="javascript"> 
-				var images=new Array;
-				var text=new Array;
-				<?
-				for($i=0;$i<count($images); $i++){
-				echo "images[$i]='".$images[$i]."';\n";
-				echo "text[$i]='".$text[$i]."';\n";
-				}			
-				?>
-				slideshowFade('slider','',images,text,20,<?echo $sec . ',' . $width . ',' . $height;?>);	
-				</script>
-				<?}?>
-    </div>
-    <div class="div3"><div id="headerText"><?php echo $header_text; ?></div></div>
-	<div class="div4">
-      <?php echo $menu; ?>
-    </div>
-    <div class="div5">
-      <div class="left"></div>
-      <div class="right"></div>
-      <div class="center">
-	  <?php echo $header_text2; ?>
-        <?php if (!$this->config->get('brochure')) { ?>
-		  <div id="search"><?php echo $entry_search; ?>&nbsp;
-          <?php if ($keyword) { ?>
-          <input type="text" value="<?php echo $keyword; ?>" id="filter_keyword" />
-          <?php } else { ?>
-          <input type="text" value="<?php echo $text_keyword; ?>" id="filter_keyword" onclick="this.value = '';" onkeydown="this.style.color = '000000'" style="color: #999;" />
-          <?php } ?>
-          &nbsp;<a onclick="moduleSearch();" class="button"><span><?php echo $button_go; ?></span></a> </div>
-			<?php } ?>
-		</div>
-    </div>
-  </div>
-  <div class="div6">
-    <div class="left"></div>
-    <div class="right"></div>
-    <div class="center">
-      <div id="breadcrumb">
-        <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-        <?php echo $breadcrumb['separator']; ?><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a>
-        <?php } ?>
-      </div>
-      <div class="div7">
-        <?php if (!$this->config->get('brochure')) {
-			if ($currencies) { ?>
-        <form action="<?php echo $action; ?>" method="post" enctype="multipart/form-data" id="currency_form">
-          <div class="switcher">
-            <?php foreach ($currencies as $currency) { ?>
-            <?php if ($currency['code'] == $currency_code) { ?>
-            <div class="selected"><a><?php echo $currency['title']; ?></a></div>
-            <?php } ?>
-            <?php } ?>
-            <div class="option">
-              <?php foreach ($currencies as $currency) { ?>
-              <a onclick="$('input[name=\'currency_code\']').attr('value', '<?php echo $currency['code']; ?>'); $('#currency_form').submit();"><?php echo $currency['title']; ?></a>
-              <?php } ?>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="content-type">
+    <title>dev600</title>
+    <link rel="stylesheet" type="text/css" href="catalog/view/theme/grey/stylesheet/stylesheet.css">
+  </head>
+  <body class="vbox gwd-body">
+    <header class="">
+      <section id="header-part1" class="">
+        <div class="header-part1-row1">
+          <section id="logo-part">
+            <div id="logo"> <img alt="logo" src="catalog/view/theme/grey/image/FashionEcommerce_0.png">
+            </div>
+          </section>
+          <section id="header-nav">
+            <nav class="horizontal-menu">
+              <ul>
+                <li><a href="#">Home |</a></li>
+                <li><a href="#">About Us |</a></li>
+                <li><a href="#">Help |</a></li>
+                <li><a href="#">Contact |</a></li>
+                <li><a href="#">My Account |</a></li>
+                <li class="li-last"><span id="mycar-state">My Cart 0 items:
+                    $0.00</span></li>
+              </ul>
+            </nav>
+          </section>
+        </div>
+        <div class="header-part1-row2">
+          <section id="header-menu">
+            <div class="horizontal-emnu-button-container">
+              <nav class="horizontal-emnu-button">
+                <ul>
+                  <li><a href="#">What's new</a></li>
+                  <li><a href="#">Dresses</a></li>
+                  <li><a href="#">Show</a></li>
+                  <li><a href="#">Accessories</a></li>
+                  <li><a href="#">Swim</a></li>
+                  <li class="last-li"><br>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+            <div class="search-container"> <span><input placeholder="Search..."><a
+                  href="#">Search</a></span>
+            </div>
+          </section>
+        </div>
+      </section>
+      <section id="header-part2">
+        <p>Free UPS ground shiping on all orders over $50 I Receive up to 40%
+          off select styles this month I Enjoy big savings on clothes with our
+          deal of the day </p>
+      </section>
+      <section id="header-part3" class="">
+        <div id="header-part3-content">
+          <section id="header-socal-links">
+            <nav class="horizontal-socal-links">
+              <ul>
+                <li><a href="#"><img src="catalog/view/theme/grey/image/facebook_0.png"
+                      alt="facebook"></a></li>
+                <li><a href="#"><img src="catalog/view/theme/grey/image/twitter_0.png"
+                      alt="twitter"></a></li>
+                <li><a href="#"><img src="catalog/view/theme/grey/image/google_0.png"
+                      alt="google"></a></li>
+                <li><a href="#"><img src="catalog/view/theme/grey/image/rss_0.png"
+                      alt="rss"></a></li>
+                <li><a href="#"><img src="catalog/view/theme/grey/image/pinterest_0.png"
+                      alt="pinterest"></a></li>
+                <li><a href="#"><img src="catalog/view/theme/grey/image/linkedin_0.png"
+                      alt="linkedin"></a></li>
+                <li><a href="#"><img src="catalog/view/theme/grey/image/fblike_0.png"
+                      alt="fblike"></a></li>
+                <li><a href="#"><img src="catalog/view/theme/grey/image/youtube_0.png"
+                      alt="youtube"></a></li>
+                <li><a href="#"><img src="catalog/view/theme/grey/image/delicious_0.png"
+                      alt="delicious"></a></li>
+                <li class="li-last"><a href="#"><img src="catalog/view/theme/grey/image/dribbble_0.png"
+                      alt="dribbble"></a></li>
+              </ul>
+            </nav>
+          </section>
+          <div id="header-part3-content-title">Fashion Ecommerce </div>
+          <div class="slide-title-container">
+            <div id="left-slide-title-container">
+              <div class="slide-title1">Browse our selection of dresses</div>
+              <div class="slide-title2">That will make you stand out</div>
+            </div>
+            <div id="right-slide-title-container">
+              <div id="right-slide-title-nav-button"><a href="#">Shop Dresses</a></div>
             </div>
           </div>
-          <input type="hidden" name="currency_code" value="" />
-          <input type="hidden" name="redirect" value="<?php echo $redirect; ?>" />
-        </form>
-        <?php 	}
-			}?>
-      </div>
-    </div>
-  </div>
-</div>
-
-<script type="text/javascript"><!-- 
-function getURLVar(urlVarName) {
-	var urlHalves = String(document.location).toLowerCase().split('?');
-	var urlVarValue = '';
-	
-	if (urlHalves[1]) {
-		var urlVars = urlHalves[1].split('&');
-
-		for (var i = 0; i <= (urlVars.length); i++) {
-			if (urlVars[i]) {
-				var urlVarPair = urlVars[i].split('=');
-				
-				if (urlVarPair[0] && urlVarPair[0] == urlVarName.toLowerCase()) {
-					urlVarValue = urlVarPair[1];
-				}
-			}
-		}
-	}
-	
-	return urlVarValue;
-} 
-
-$(document).ready(function() {
-	route = getURLVar('route');
-	
-<?php if ($slider) { ?>
-	$("#slider").easySlider({
-		auto: true,
-		continuous: true,
-		pause: <?echo $sec;?>,
-		controlsShow: false
-	});
-	<?php } ?>
-	
-	if (!route) {
-		$('#tab_home').addClass('selected');
-	} else {
-		part = route.split('/');
-		
-		if (route == 'checkout/onepage') {
-			$("#tabs").tabs();
-			$("#ptabs").tabs();
-		}
-		
-		if (route == 'common/home') {
-			$('#tab_menu_1').addClass('selected');
-		} else if (route == 'account/login') {
-			$('#tab_menu_2').addClass('selected');	
-		} else if (part[0] == 'account') {
-			$('#tab_menu_6').addClass('selected');
-		} else if (route == 'checkout/cart') {
-			$('#tab_menu_4').addClass('selected');
-		} else if (part[0] == 'checkout') {
-			$('#tab_menu_5').addClass('selected');
-		} else {
-			$('#tab_menu_1').addClass('selected');
-		}
-	}
-});
-//--></script>
-<script type="text/javascript"><!--
-$('#module_search input').keydown(function(e) {
-	if (e.keyCode == 13) {
-		moduleSearch();
-	}
-});
-
-function moduleSearch() {
-	url = 'index.php?route=product/search';
-	
-	var filter_keyword = $('#filter_keyword').attr('value')
-	
-	if (filter_keyword) {
-		url += '&keyword=' + encodeURIComponent(filter_keyword);
-	}
-	
-	var filter_category_id = $('#filter_category_id').attr('value');
-	
-	if (filter_category_id) {
-		url += '&category_id=' + filter_category_id;
-	}
-	
-	location = url;
-}
-
-$('#search input').keydown(function(e) {
-	if (e.keyCode == 13) {
-		moduleSearch();
-	}
-});
-//--></script>
-<script type="text/javascript"><!--
-$('.switcher').bind('click', function() {
-	$(this).find('.option').slideToggle('fast');
-});
-//--></script>
+          <div class="grid">
+            <div class="cell">
+              <div class="cell-pic"><img src="catalog/view/theme/grey/image/Layer27_0.png"></div>
+              <div class="cell-tilte-container">
+                <div class="cell-tilte">Dresses</div>
+                <div class="cell-nav"><a href="#">Shop Now</a></div>
+              </div>
+            </div>
+            <div class="cell">
+              <div class="cell-pic"><img src="catalog/view/theme/grey/image/Layer28.png"></div>
+              <div class="cell-tilte-container">
+                <div class="cell-tilte">Accessories</div>
+                <div class="cell-nav"><a href="#">Shop Now</a></div>
+              </div>
+            </div>
+            <div class="cell cell-last">
+              <div class="cell-pic"><img src="catalog/view/theme/grey/image/Layer29.png"></div>
+              <div class="cell-tilte-container">
+                <div class="cell-tilte">Shoes</div>
+                <div class="cell-nav"><a href="#">Shop Now</a></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </header>
