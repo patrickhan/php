@@ -1,4 +1,4 @@
-<?php echo $header; ?><?php echo $column_left; ?><?php echo $column_right; ?>
+<?php echo $header; ?>
 <div id="content">
 	<div class="top">
 		<div class="left"></div>
