@@ -157,6 +157,7 @@ a:hover {
 }
 body {
     -moz-box-sizing: border-box;
+    box-sizing:border-box;
     height: 2187px;
     left: 0;
     margin: 0 auto;
@@ -167,6 +168,7 @@ body {
 }
 header {
     -moz-box-sizing: border-box;
+    box-sizing:border-box;
     background-attachment: scroll;
     background-color: #FFFFFF;
     background-image: none;
@@ -176,6 +178,7 @@ header {
 }
 header #header-part1 {
     -moz-box-sizing: border-box;
+    box-sizing:border-box;
     background-attachment: scroll;
     background-color: #000000;
     background-image: none;
@@ -197,6 +200,10 @@ header #header-part1 .header-part1-row2 {
     clear: both;
     height: 40px;
     width: 100%;
+	background: linear-gradient(270deg, #413e47 0%, #1a181c 100%); 
+	background: -moz-linear-gradient(270deg, #413e47 0%, #1a181c 100%); 
+	background: -webkit-linear-gradient(270deg, #413e47 0%, #1a181c 100%); 
+	background: -o-linear-gradient(270deg, #413e47 0%, #1a181c 100%);     
 }
 header #header-part1 #logo-part {
     float: left;
@@ -256,6 +263,10 @@ header #header-part1 #header-menu .search-container {
     margin-bottom: 5px;
     margin-left: 10px;
     margin-top: 5px;
+background: linear-gradient(270deg, #797485 0%, #4a4654 100%); 
+background: -moz-linear-gradient(270deg, #797485 0%, #4a4654 100%); 
+background: -webkit-linear-gradient(270deg, #797485 0%, #4a4654 100%); 
+background: -o-linear-gradient(270deg, #797485 0%, #4a4654 100%);    
 }
 header #header-part1 #header-menu .search-container div {
     font-weight: bold;
@@ -270,7 +281,9 @@ header #header-part1 #header-menu .search-container a {
     margin-left: 12px;
     margin-right: 12px;
     margin-top: 10px;
+    text-decoration: none;
     text-transform: uppercase;
+    
 }
 header #header-part1 #header-menu .search-container input {
     height: 30px;
@@ -279,6 +292,7 @@ header #header-part1 #header-menu .search-container input {
 }
 header #header-part2 {
     -moz-box-sizing: border-box;
+    box-sizing:border-box;
     background-attachment: scroll;
     background-color: #FFFFFF;
     background-image: none;
@@ -291,6 +305,7 @@ header #header-part2 {
 }
 header #header-part2 p {
     -moz-box-sizing: border-box;
+    box-sizing:border-box;
     color: #000000;
     font-family: Arial;
     font-size: 14px;
@@ -300,6 +315,7 @@ header #header-part2 p {
 }
 header #header-part3 {
     -moz-box-sizing: border-box;
+    box-sizing:border-box;
     background-attachment: scroll;
     background-color: rgba(0, 0, 0, 0);
     background-image: url("../image/Layer26.png");
@@ -354,10 +370,10 @@ header #header-part3 #header-part3-content {
     width: 208px;
 }
 #right-slide-title-nav-button {
-    background-attachment: scroll;
-    background-color: #000000;
-    background-image: none;
-    background-position: 0 0;
+background: linear-gradient(270deg, #1a181e 0%, #000000 100%); 
+background: -moz-linear-gradient(270deg, #1a181e 0%, #000000 100%); 
+background: -webkit-linear-gradient(270deg, #1a181e 0%, #000000 100%); 
+background: -o-linear-gradient(270deg, #1a181e 0%, #000000 100%);
     background-repeat: repeat;
     margin-bottom: 5px;
     margin-top: 5px;
@@ -420,25 +436,25 @@ header #header-part3 #header-part3-content {
     background-position: 0 0;
     background-repeat: repeat;
     padding: 20px 220px;
+    flex:1 1 0;
 }
 #content-part {
     align-items: stretch;
     align-self: stretch;
     background-color: #FFFFFF;
-    background-image: none;
-    background-position: 0 0;
-    background-repeat: repeat;
     display: flex;
     height: 100%;
     width: 100%;
 }
 footer {
     -moz-box-sizing: border-box;
+    box-sizing:border-box;
     height: 316px;
     overflow: hidden;
 }
 footer #footer-part1 {
     -moz-box-sizing: border-box;
+    box-sizing:border-box;
     background-attachment: scroll;
     background-color: #333333;
     background-image: none;
@@ -448,6 +464,7 @@ footer #footer-part1 {
 }
 footer #footer-part2 {
     -moz-box-sizing: border-box;
+    box-sizing:border-box;
     background-attachment: scroll;
     background-color: #000000;
     background-image: none;
@@ -595,7 +612,11 @@ footer #footer-part2 {
 }
 .content-col-title {
     -moz-box-sizing: border-box;
-    background-color: #333333;
+    box-sizing:border-box;
+background: linear-gradient(270deg, #2f2d33 0%, #1a181e 100%); 
+background: -moz-linear-gradient(270deg, #2f2d33 0%, #1a181e 100%); 
+background: -webkit-linear-gradient(270deg, #2f2d33 0%, #1a181e 100%); 
+background: -o-linear-gradient(270deg, #2f2d33 0%, #1a181e 100%);
     color: #FFFFFF;
     direction: ltr;
     font-size: 16px;
@@ -674,6 +695,7 @@ footer #footer-part2 {
     margin: 5px 3px;
     padding-top: 5px;
     position: relative;
+    text-align: center;
     width: 156px;
 }
 .product-achor a {
@@ -706,12 +728,17 @@ footer #footer-part2 {
     overflow: hidden;
 }
 .add-cart-button {
-    background-color: #333333;
+background: linear-gradient(270deg, #2f2d33 0%, #1a181e 100%); 
+background: -moz-linear-gradient(270deg, #2f2d33 0%, #1a181e 100%); 
+background: -webkit-linear-gradient(270deg, #2f2d33 0%, #1a181e 100%); 
+background: -o-linear-gradient(270deg, #2f2d33 0%, #1a181e 100%);
     color: #FFFFFF;
-    margin: 10px auto auto;
-    text-align: center;
+    cursor: pointer;
     text-transform: uppercase;
     width: 80%;
+    height: 33px;
+    line-height: 33px;
+    display: inline-block;
 }
 .button[id^="add_to_cart"] {
     background: none repeat scroll 0 0 #333333;
